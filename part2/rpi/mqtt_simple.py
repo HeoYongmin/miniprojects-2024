@@ -1,4 +1,4 @@
-# mqtt_simple.py
+#mqtt_simple.py
 import paho.mqtt.client as mqtt
 import time
 
@@ -6,7 +6,7 @@ loop_num = 0
 
 def onConnect(client, userdata, flags, reason_code, properties):
     print(f'Connected result code : {reason_code}')
-    client.subscribe('pknu76/rcv')
+    client.subscribe('pknu68/rcv')
 
 def onMessage(client, userdata, msg):
     print(f'{msg.topic} + {msg.payload}')
@@ -20,7 +20,7 @@ mqttc.connect('192.168.5.2', 1883, 60)
 
 mqttc.loop_start()
 while True:
-    mqttc.publish('pknu76/data', loop_num)
+    mqttc.publish('pknu68/data', loop_num)
     loop_num += 1
     time.sleep(1)
 
